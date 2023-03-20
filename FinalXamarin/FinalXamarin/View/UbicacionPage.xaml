@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FinalXamarin.ViewModels"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="FinalXamarin.View.UbicacionPage">
+
+    <ContentPage.BindingContext>
+        <vm:UbicacionViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Inicio" Command="{Binding Exit}"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="640"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Text="Buscar" FontAttributes="Bold" FontSize="10" Clicked="Button_Clicked"
+                    BorderColor="{StaticResource bordes}"
+                    BackgroundColor="{StaticResource ButtonColor}"/>
+            <Entry Grid.Row="1" Text="{Binding Address}"  Placeholder="Ingrese Dirección" 
+                   BackgroundColor="{StaticResource EntryColor}"
+                       TextColor="{StaticResource ColorText}"/>
+            <StackLayout Grid.Row="2">
+                
+                
+                <maps:Map x:Name="map" InitialCameraUpdate="6.564, -75.819" />
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

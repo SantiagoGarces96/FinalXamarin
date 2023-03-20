@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FinalXamarin.ViewModels"
+             x:Class="FinalXamarin.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="120"></RowDefinition>
+                <RowDefinition Height="130"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="8" BackgroundColor="{StaticResource Titulos}" BorderColor="{StaticResource bordes}">
+                <Image Source="perosnas"/>
+            </Frame>
+
+            <Frame BorderColor="{StaticResource bordes}"
+                Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3">
+                <StackLayout>
+                    <Label TextColor="{StaticResource ColorText}" Text="REGISTRAR PERSONA" HorizontalTextAlignment="Center"/>
+                    <Image Source="persona.png"/>
+                    <Button Command="{Binding RegisterPersona}" Text="AGREGAR" BackgroundColor="{StaticResource ButtonColor}" BorderColor="{StaticResource bordes}" BorderWidth="1" />
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="{StaticResource bordes}"
+                Grid.Row="3" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="3">
+                <StackLayout>
+                    <Label TextColor="Black" Text="LISTA DE PERSONA" HorizontalTextAlignment="Center"/>
+                    <Image Source="listapersonas.png"/>
+                    <Button Command="{Binding ListPersonas}" Text="LISTA" BackgroundColor="{StaticResource ButtonColor}" BorderColor="{StaticResource bordes}" BorderWidth="1" />
+                </StackLayout>
+            </Frame>
+
+
+
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
