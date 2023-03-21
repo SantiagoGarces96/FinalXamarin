@@ -14,17 +14,27 @@
     <StackLayout>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="640"/>
+                <RowDefinition Height="540"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Text="Buscar" FontAttributes="Bold" FontSize="10" Clicked="Button_Clicked"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="390"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Row="0"  Grid.Column="0"  BackgroundColor="{StaticResource Titulos}">
+                <Image Source="ubicacion.png"/>
+            </Frame>
+            <Button Grid.Row="2" Grid.Column="0" Text="Buscar" FontAttributes="Bold" FontSize="10" Clicked="Button_Clicked"
                     BorderColor="{StaticResource bordes}"
                     BackgroundColor="{StaticResource ButtonColor}"/>
-            <Entry Grid.Row="1" Text="{Binding Address}"  Placeholder="Ingrese Dirección" 
+            <Entry Grid.Row="1" Grid.Column="0" Text="{Binding Address}"  Placeholder="Ingrese Dirección" 
                    BackgroundColor="{StaticResource EntryColor}"
                        TextColor="{StaticResource ColorText}"/>
-            <StackLayout Grid.Row="2">
+            <StackLayout Grid.Row="3" Grid.Column="0">
                 
                 
                 <maps:Map x:Name="map" InitialCameraUpdate="6.564, -75.819" />
